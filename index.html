@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bustem Brand Report Queue — Tolani Lambe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">A working GTM sample for Bustem · Tolani Lambe</div>
+      <h1>Find the brand that already has the problem.</h1>
+      <p class="intro">A queue of public reports for ecommerce brand protection. It keeps the source, checks fit and recency, and flags existing Bustem conversations when the operator marks them.</p>
+      <div class="top-actions"><button id="loadDemo">Load researched examples</button><button id="exportCsv" class="secondary">Export queue as CSV</button><button id="clear" class="text-button">Clear local queue</button></div>
+    </header>
+
+    <section class="stats" aria-label="Queue overview">
+      <div><strong id="count">0</strong><span>reports in queue</span></div>
+      <div><strong id="review">0</strong><span>review now</span></div>
+      <div><strong id="routed">0</strong><span>routed or held</span></div>
+    </section>
+
+    <section class="workspace">
+      <div class="section-title"><div><span class="section-kicker">01 / intake</span><h2>Add a public report</h2></div><p>Nothing is sent automatically. A person checks the evidence and brand relationship first.</p></div>
+      <form id="signalForm">
+        <div class="form-grid">
+          <label>Brand <input name="brand" required placeholder="Brand name"></label>
+          <label>Person <input name="person" placeholder="Founder or brand team"></label>
+          <label>Brand URL <input name="brandUrl" type="url" placeholder="https://brand.com"></label>
+          <label>Public source URL <input name="sourceUrl" type="url" required placeholder="https://..."></label>
+          <label>Source date <input name="sourceDate" type="date"></label>
+          <label>Evidence type <select name="evidence"><option value="first_party">First-party brand or founder report</option><option value="interview">Founder interview</option><option value="repost">Reposted notice</option><option value="other">Other</option></select></label>
+          <label>Issue <select name="channel"><option value="clone_site">Clone or fake website</option><option value="counterfeit">Counterfeit listing</option><option value="creative_copy">Copied ads or creative</option><option value="other">Other</option></select></label>
+          <label>Current status <select name="status"><option value="unknown">Not yet checked</option><option value="open">Reported ongoing</option><option value="resolved">Reported resolved</option><option value="chose_other_route">Chose another route</option></select></label>
+          <label>Bustem relationship <select name="relationship"><option value="unknown">Not yet checked</option><option value="already_engaged">Already engaged</option><option value="customer">Existing customer</option><option value="none">No known relationship</option></select></label>
+        </div>
+        <label>What the source actually says <textarea name="issue" required placeholder="One factual sentence; no guessed revenue or accusations."></textarea></label>
+        <label>Manual check needed <textarea name="notes" placeholder="What should a human verify before outreach?"></textarea></label>
+        <button type="submit">Score and add to queue</button><span id="formMessage" role="status"></span>
+      </form>
+    </section>
+
+    <section class="workspace">
+      <div class="section-title"><div><span class="section-kicker">02 / qualification</span><h2>Review queue</h2></div><p>Scores rank evidence. The lane decides the next action.</p></div>
+      <div id="queue" class="queue"><p class="empty">Load the researched examples or add a public post above.</p></div>
+    </section>
+
+    <section class="method">
+      <span class="section-kicker">03 / handoff</span>
+      <h2>The proposed Bustem workflow</h2>
+      <div class="steps"><div><b>1</b><h3>Capture</h3><p>Find brands reporting clone sites, fake ads, or counterfeit listings. Keep the URL and date.</p></div><div><b>2</b><h3>Qualify</h3><p>Check ecommerce fit, whether the issue is current, and whether Bustem already owns the conversation.</p></div><div><b>3</b><h3>Verify</h3><p>A human confirms the brand and problem. No automated infringement claims or scraped personal contacts.</p></div><div><b>4</b><h3>Offer a scan</h3><p>Send a brief note about the report and offer Bustem’s existing free scan. Track reply, scan booked and MRR.</p></div></div>
+      <p class="fine">This is a public data prototype, not Bustem’s internal CRM or detection system. Scores are prioritization aids, not proof of infringement. Sample records are linked to their sources.</p>
+    </section>
+    <footer><span>Built to demonstrate the workflow, not claim results.</span><a href="https://github.com/Mazza-dev/bustem-signal-desk/blob/main/WORKFLOW.md" target="_blank" rel="noopener">How I would run it ↗</a><a href="https://github.com/Mazza-dev/bustem-signal-desk" target="_blank" rel="noopener">View code ↗</a></footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
